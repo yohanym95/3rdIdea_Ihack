@@ -51,7 +51,7 @@ class SignUpState extends State<SignUp> {
   TextEditingController phoneNumberController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-  String CREATE_POST_URL = 'http://192.168.1.102:3000/api/user/register';
+  String CREATE_POST_URL = 'http://192.168.137.130:3000/api/user/register';
 
   @override
   Widget build(BuildContext context) {
@@ -222,6 +222,7 @@ class SignUpState extends State<SignUp> {
         });
   }
 
+  //name field for textfield (first name,last name)
   Widget nameFieldSet(
       TextEditingController txtController, String retEmpty, String lblText,
       [String hintTxt]) {
@@ -254,9 +255,8 @@ class SignUpState extends State<SignUp> {
       ),
     );
   }
-}
 
-//validate email
+  //validate email
 String validateEmail(String value) {
   Pattern pattern =
       r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
@@ -284,3 +284,6 @@ String validateMobile(String value) {
   }
   return null;
 }
+}
+
+
