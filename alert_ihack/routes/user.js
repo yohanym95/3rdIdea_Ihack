@@ -1,12 +1,12 @@
-const express=require('express');
+const express=require('express');           // import express
 
-const router=express.Router();
-const {User}=require('../models/user');
+const router=express.Router();                  // import router Class
+const {User}=require('../models/user');         
 
 
-router.post('/register',async(req,res)=>{
+router.post('/register',async(req,res)=>{           // rest api post for register app users
     try{
-        let user=new User({
+        let user=new User({                             // create json user object by getting data from js 
             fname:req.body.fname,
             lname:req.body.lname,
             email:req.body.email,
@@ -14,7 +14,7 @@ router.post('/register',async(req,res)=>{
             phnumber:req.body.phnumber
         }); 
 
-        let isemail=await User.findOne({email:req.body.email});
+        let isemail=await User.findOne({email:req.body.email});         
         console.log(isemail);
         if(isemail)
         return res.send({"msg":"this email has been taken"});
