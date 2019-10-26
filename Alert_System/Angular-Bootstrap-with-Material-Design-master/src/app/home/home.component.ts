@@ -18,8 +18,8 @@ export class HomeComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.socket.on('chat',function(as){
-      console.log(as);
+    this.socket.on('chat',function(data){
+      console.log(data);
     })
   }
   sendmessage(){
