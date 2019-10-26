@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form action="" [formGroup]="message">
+                    <div class="md-form">
+                            <input formControlName="title" mdbInput type="text" id="form3" class="form-control">
+                            <label for="form3" class="">Title</label>
+                    </div>
+                <div class="md-form">
+                        <input  formControlName="date" mdbInput type="text" id="form1" class="form-control">
+                        <label for="form1" class="">Date</label>
+                </div>
+                <div class="md-form">
+                        <input mdbInput formControlName="area"  type="text" id="form2" class="form-control">
+                        <label for="form2" class="">Area</label>
+                </div>
+                <div class="md-form">
+                        <textarea type="text" formControlName="guides" id="form7" class="md-textarea md-textarea-auto form-control" mdbInput></textarea>
+                        <label for="form7">guides</label>
+                </div>
+                      <button type="button" (click)="get_message()" mdbBtn color="success" mdbWavesEffect>Submit</button>
+            </form>        
+        </div>
+        <div>
+            <h1>list</h1>
+        </div>
+    </div>
+</div>
