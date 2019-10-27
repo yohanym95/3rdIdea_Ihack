@@ -1,0 +1,10 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+                <agm-map  [latitude]="lat" [longitude]="lng" >
+                        <agm-marker *ngFor="let a of loc" [latitude]="a.lat" [longitude]="a.lng"></agm-marker>
+                </agm-map>
+        </div>
+    </div>
+</div>
+

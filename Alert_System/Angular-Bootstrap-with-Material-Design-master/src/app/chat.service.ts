@@ -4,10 +4,12 @@ import * as io from 'socket.io-client';
   providedIn: 'root'
 })
 export class ChatService {
-   socket;
+  socket;
   constructor() {
-    this.socket=io.connect('http://localhost:3000/');
-   }
+    this.socket = io.connect('http://localhost:3000/');           // start connection with backend
+    // ws://echo.websocket.org 
+    // this.socket=io.connect('ws://echo.websocket.org'); 
+  }
 
-  
+
 }
