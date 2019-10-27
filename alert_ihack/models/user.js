@@ -18,4 +18,14 @@ const User=mongoose.model('user',new mongoose.Schema({          // create user s
     }
 }));
 
+const Location=mongoose.model('location',new mongoose.Schema({
+    lat:{
+        type:String
+    },
+    lng:{
+        type:String
+    }
+}))
+
 module.exports.User=User;           //export User class
+module.exports.Location=Location;

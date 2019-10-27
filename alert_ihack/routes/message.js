@@ -19,4 +19,11 @@ router.post('/save',async(req,res)=>{
     }
 });
 
+router.get('/getall',async(req,res)=>{
+    let allmessage=await Message.find();
+    res.send(allmessage);
+
+
+})
+
 module.exports=router;

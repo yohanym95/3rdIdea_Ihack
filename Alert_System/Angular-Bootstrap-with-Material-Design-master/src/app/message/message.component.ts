@@ -8,6 +8,7 @@ import { AdminService } from '../admin.service';
   styleUrls: ['./message.component.scss']
 })
 export class MessageComponent implements OnInit {
+  allmsg;
 
   message=new FormGroup({
     title:new FormControl(),
@@ -18,12 +19,19 @@ export class MessageComponent implements OnInit {
   constructor(private adminservice:AdminService) { }
 
   ngOnInit() {
+    this.allmsg=this.adminservice.get_allmessage().
+    subscribe(data=>{
+      this.allmsg=data;
+      console.log(data);
+    })
+    
   }
   get_message(){
     console.log(this.message.value);
     this.adminservice.send_information(this.message.value)
     .subscribe(data=>{
       console.log(data);
+      this.message.reset();
     })
   }
 

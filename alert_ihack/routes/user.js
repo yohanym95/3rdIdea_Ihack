@@ -1,7 +1,33 @@
 const express=require('express');           // import express
 
 const router=express.Router();                  // import router Class
-const {User}=require('../models/user');         
+const {User,Location}=require('../models/user');         
+
+
+router.post('/location',async(req,res)=>{
+    try{
+        let location=new Location({
+            lat:req.body.lat,
+            lng:req.body.lng
+        });
+        let prelocation=await location.save();
+        console.log(prelocation);
+        res.send({"msg":"succefully"});
+    }catch(err){
+        console.log("error");
+        res.send({"msg":"try again"});
+    }
+});
+
+router.get('/location',async(req,res)=>{
+    try{
+        let location=await Location.find();
+         res.send(location);
+    }catch(err){
+        res.send({"msg":"try again"});
+    }
+})
+
 
 
 router.post('/register',async(req,res)=>{           // rest api post for register app users

@@ -17,4 +17,9 @@ export class AdminService {
    return this.http.post(this.address+'api/message/save',message);
   }
 
+  public get_allmessage(){
+    return this.http.get(this.address+'api/message/getall');
+  }
+  
+
 }
